@@ -1,50 +1,36 @@
-# React + TypeScript + Vite
+# Frontend Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project is a frontend application built with React and Vite. It interacts with a backend service to fetch and send data. To properly configure the frontend to communicate with the backend, you need to set up the `VITE_BACKEND_API` environment variable.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Environment Variables
 
-## Expanding the ESLint configuration
+To configure the frontend application, you need to set the following environment variable:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- `VITE_BACKEND_API`: The base URL of your backend API.
 
-- Configure the top-level `parserOptions` property like this:
+### Setting Up Environment Variables
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. **Create a `.env` file** in the root of your frontend project directory (if it doesn't already exist).
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. **Add the following variable** to the `.env` file:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+    ```plaintext
+    VITE_BACKEND_API=http://localhost:3000
+    ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+    Adjust the URL as needed if your backend is hosted at a different address.
+
+3. **Restart your Vite development server** to apply the changes:
+
+    ```bash
+    pnpm run dev
+    ```
+
+## Node.js Version
+
+This project requires Node.js version 20.16.0. Make sure you have this version installed for compatibility:
+
+```bash
+node -v

@@ -1,0 +1,13 @@
+{
+	"name": "node-resend-emails",
+	"version": "1.0.0",
+	"description": "API to consume the Resend Client with NodeJS and Docker Deployment",
+	"main": "index.js",
+	"type": "module",
+	"author": "Luiz Arnold Chavez Burgos",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.19.2",
+		"resend": "^4.0.0"
+	}
+}
